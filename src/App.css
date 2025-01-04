@@ -1,42 +1,465 @@
-#root {
-  max-width: 1280px;
+/* General Styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  align-items: flex-start;
+  background:  linear-gradient(to right, #6a11cb, #2575fc);
+  color: #f9f9f9;
+  /* Unified text color */
+  overflow-x: hidden;
+}
+
+/* Shared Container Styling */
+
+.page-container {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #05064d, #0fa2f7);
+  /* Consistent background */
+  min-height: 100vh;
+  /* Ensure full height for each section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header Section */
+
+/* Header Section */
+
+.header {
+  width: 100%;
+  padding: 15px 20px;
+  /* Adjusted padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Aligns header content vertically */
+  background:  linear-gradient(to right, #6a11cb, #2575fc);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Optional shadow for a subtle effect */
+}
+
+.header h1 {
+  font-size: 2.2em;
+  /* Slightly smaller for better balance */
+  margin: 0;
+  color: #ffffff;
+  /* White text color */
+  flex-shrink: 0px;
+  /* Prevent h1 from shrinking */
+  font-weight: bold;
+  /* Emphasize header */
+  text-transform: uppercase;
+  /* Optional styling */
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* Space between navigation links */
+  flex-grow: 1;
+}
+
+.nav-link {
+  color: #ffffff;
+  /* White text for links */
+  text-decoration: none;
+  /* Remove underlines */
+  font-size: 1em;
+  /* Standard font size for links */
+  padding: 8px 12px;
+  /* Padding for better click area */
+  border-radius: 5px;
+  /* Rounded edges for a softer look */
+  transition: color 0.3s, background-color 0.3s;
+  /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+  color: #05064d;
+  /* Darker color on hover */
+  background-color: #ffffff;
+  /* Add contrast background on hover */
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.8em;
+    /* Adjust heading size for smaller screens */
+    margin-right: 50px;
+    /* Reduce margin on smaller screens */
+  }
+
+  .nav {
+    gap: 15px;
+    /* Reduce gap for smaller screens */
+  }
+
+  .nav-link {
+    font-size: 0.9em;
+    /* Slightly smaller font size for links */
+    padding: 6px 10px;
+    /* Adjust padding for smaller screens */
+  }
+}
+
+/* Contact Page */
+
+.contact-container {
+  margin: 20px 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1em;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #0097a7;
+}
+
+/* Skills Page */
+
+.skills-container {
+  margin: 20px 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* Wraps the skill items */
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-item {
+  flex: 1 1 calc(50% - 50px);
+  /* Two columns */
+  max-width: 300px;
+  padding: 10px 20px;
+  background-color: rgba(16, 19, 230, 0.8);
+  /* Background with transparency */
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.skill-level {
+  font-size: 1em;
+  color: #fff;
+  margin-left: 50px;
+}
+
+/* Projects Page */
+
+.projects-container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center content horizontally */
+}
+
+.projects-list {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #1198f1;
+  color: #f9f9f9;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 50%;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-name {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.project-technologies {
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+/* About Page */
+
+/* About Page */
+
+/* Main Container */
+
+.about-container {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+  background-color: #f5f5f5;
+  /* Light background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+
+.about-container h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* General Text */
+
+.about-container p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* Highlighted Text */
+
+.about-container strong {
+  color: #2c3e50;
+}
+
+/* Details Section */
+
+.about-details {
+  margin-top: 20px;
+}
+
+/* Subheadings */
+
+.about-details h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+/* Adjustments for paragraphs under subheadings */
+
+.about-details p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 15px;
+  }
+
+  .about-container h1 {
+    font-size: 2em;
+  }
+
+  .about-details h2 {
+    font-size: 1.5em;
+  }
+
+  .about-container p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container h1 {
+    font-size: 1.8em;
+  }
+
+  .about-details h2 {
+    font-size: 1.3em;
+  }
+
+  .about-container p {
+    font-size: 0.9em;
+  }
+}
+
+/* Home Page */
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.home-content {
+  max-width: 900px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.home-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.home-intro {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.home-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.home-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  flex: 1;
+}
+
+.home-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+.home-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+
+/* Tablets */
+
+@media (max-width: 1024px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    /* Stack all sections */
+    grid-template-rows: auto;
+    gap: 20px;
+    /* Increased spacing for readability */
   }
-  to {
-    transform: rotate(360deg);
+
+  .home-header {
+    min-height: 35vh;
+    /* Adjust height */
+  }
+
+  .home-header h1 {
+    font-size: 2em;
+  }
+
+  .home-header p {
+    font-size: 0.9em;
+  }
+
+  .home-section,
+  .home-section-about {
+    padding: 12px;
+    font-size: 0.9em;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Small Tablets and Phones */
+
+@media (max-width: 768px) {
+  .home-header h1 {
+    font-size: 1.8em;
+  }
+
+  .home-header p {
+    font-size: 0.85em;
+  }
+
+  .home-section,
+  .home-section-about {
+    font-size: 0.85em;
+    padding: 10px;
   }
 }
 
-.card {
-  padding: 2em;
-}
+/* Small Phones */
 
-.read-the-docs {
-  color: #888;
+@media (max-width: 480px) {
+  .home-header h1 {
+    font-size: 1.5em;
+  }
+
+  .home-header p {
+    font-size: 0.8em;
+  }
+
+  .home-section,
+  .home-section-about {
+    font-size: 0.8em;
+    padding: 8px;
+  }
 }

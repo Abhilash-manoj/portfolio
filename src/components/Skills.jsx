@@ -12,7 +12,7 @@ function Skills() {
   return (
     <div className="skills-container">
       <h1>My Skills</h1>
-      <p>Here are some of the technical skills I have acquired:</p>
+      <p>Here are some of the technical skills I have acquired:</p><br></br><br></br>
       <ul className="skills-list">
         {skills.map((skills, index) => (
           <li key={index} className="skill-item">

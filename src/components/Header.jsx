@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <header className="header">
+        <h1>  Portfolio  </h1>
       <nav className="nav">
-        <h1>Your Name</h1>
         <Link to="/" className="nav-link">
-        Home
+          Home
         </Link>
         <Link to="/about" className="nav-link">
           About

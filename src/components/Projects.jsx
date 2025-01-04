@@ -4,27 +4,21 @@ function Projects() {
     {
       name: 'Personal Finance Tracker',
       description: 'A web application to manage personal expenses and track budgets.',
-      technologies: ['React', 'Node.js', 'MongoDB'],
+      technologies: ['React', 'Node.js', 'MYSQL'],
       link: '#',
     },
     {
-      name: 'Portfolio Website',
-      description: 'A responsive portfolio showcasing my skills and projects.',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      link: '#',
-    },
-    {
-      name: 'E-Commerce Platform',
-      description: 'A mock e-commerce platform with cart functionality and payment integration.',
-      technologies: ['React', 'Express', 'MySQL'],
-      link: '#',
+      name: 'Student Information Module',
+      description: 'A dynamic web application designed to facilitate efficient management and accessibility of student records',
+      technologies: ['HTML','CSS', 'PHP', 'MySQL'],
+      link: 'https://github.com/Abhilash-manoj/student-information-module',
     },
   ];
 
   return (
     <div className="projects-container">
       <h1>My Projects</h1>
-      <p>Here are some of the projects I have worked on:</p>
+      <p>Here are some of the projects I have worked on:</p><br></br><br></br>
       <div className="projects-list">
         {projects.map((projects, index) => (
           <div key={index} className="project-item">
