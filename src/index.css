@@ -93,17 +93,12 @@ html, body {
 /* Contact Page */
 .contact-container {
   margin: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   gap: 20px;
 }
 
 .contact-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
   width: 100%;
   max-width: 600px;
   margin: auto;
@@ -277,47 +272,6 @@ html, body {
   color: #089bfd;
 }
 
-/* About Page */
-
-/* Main Container */
-.about-container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Smooth shadow for depth */
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  line-height: 1.8;
-}
-
-/* Header */
-.about-container h1 {
-  font-size: 2.5em;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #fdfeff;
-}
-
-/* Paragraphs */
-.about-container p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  color: #8f9091;
-  text-align: justify;
-}
-
-/* Subheadings */
-.about-container h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-  color:#ffffff; /* Light blue for subheadings */
-  border-bottom: 2px solid #ffffff;
-  padding-bottom: 5px;
-}
-
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .about-container {
@@ -358,42 +312,54 @@ html, body {
 
 
 /* Home Page */
-
+/* Home Page */
 .home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  gap:20px;
-  background:   linear-gradient(to bottom, #040b47, #1713ee); 
-  color: white;
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #040b47, #1c55e6);
+  color: #f4f4f4;
   text-align: center;
+  min-height: 100vh;
 }
 
 .home-content {
-  max-width: 900px;
-
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
 }
 
 .home-header {
-  height: 50%;
+  height: 300px;
   border-radius: 25px;
   background-image: url('./assets/programmin.jpg');
   background-size: cover;
-  color: white;
-  margin: auto;
+  background-position: center;
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #f4f4f4;
 }
+
 .home-title {
   font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 15px;
 }
 
 .home-intro {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  line-height: 1.8;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .home-details {
@@ -404,84 +370,115 @@ html, body {
 }
 
 .home-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
   flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
 }
 
 .home-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
   color: #ffd700;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .home-card p {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #f4f4f4;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* Responsive Design */
 
 /* Tablets */
 @media (max-width: 1024px) {
-  .home-container {
-    grid-template-columns: 1fr; /* Stack all sections */
-    grid-template-rows: auto;
-    gap: 20px; /* Increased spacing for readability */
+  .home-content {
+    padding: 15px;
   }
 
-  .home-header {
-    min-height: 35vh; /* Adjust height */
+  .home-title {
+    font-size: 2.5rem;
   }
 
-  .home-header h1 {
-    font-size: 2em;
+  .home-intro {
+    font-size: 1.1rem;
   }
 
-  .home-header p {
-    font-size: 0.9em;
-  }
-
-  .home-section,
-  .home-section-about {
-    padding: 12px;
-    font-size: 0.9em;
+  .home-card {
+    max-width: 300px;
+    padding: 20px;
   }
 }
 
-/* Small Tablets and Phones */
+/* Phones */
 @media (max-width: 768px) {
-  .home-header h1 {
-    font-size: 1.8em;
+
+  .home-header{
+    display: grid;
+    gap: 20px; /* Space between items */
+    padding: 20px;
   }
 
-  .home-header p {
-    font-size: 0.85em;
+  .home-content {
+    display: grid;
+    gap: 20px; /* Space between items */
+    padding: 20px;
   }
 
-  .home-section,
-  .home-section-about {
-    font-size: 0.85em;
-    padding: 10px;
+  .home-header {
+    height: 250px;
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-intro {
+    font-size: 1rem;
+  }
+
+  .home-card {
+    padding: 15px;
+  }
+
+  .home-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .home-card p {
+    font-size: 0.95rem;
   }
 }
 
 /* Small Phones */
 @media (max-width: 480px) {
-  .home-header h1 {
-    font-size: 1.5em;
+  .home-title {
+    font-size: 1.8rem;
   }
 
-  .home-header p {
-    font-size: 0.8em;
+  .home-intro {
+    font-size: 0.9rem;
   }
 
-  .home-section,
-  .home-section-about {
-    font-size: 0.8em;
-    padding: 8px;
+  .home-card {
+    padding: 10px;
+  }
+
+  .home-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .home-card p {
+    font-size: 0.85rem;
   }
 }
